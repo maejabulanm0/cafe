@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakura Café</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fffafc;
+    }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      height: 90vh;
+    }
+    .reveal {
+     opacity: 0;
+     transform: translateY(50px);
+     transition: all 0.8s ease-out;
+    }
+
+    .carousel img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    /* Scroll animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-pink-300 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-pink-900">🌸 Sakura Café</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="#home" class="hover:text-pink-700">Home</a></li>
+          <li><a href="#menu" class="hover:text-pink-700">Menu</a></li>
+          <li><a href="#about" class="hover:text-pink-700">About</a></li>
+          <li><a href="#contact" class="hover:text-pink-700">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Carousel -->
+  <section id="home" class="carousel">
+    <img src="cafe1.jpg" class="active" alt="Cafe Interior">
+    <img src="cafe2.jpg" alt="Cafe Coffee">
+    <img src="cafe3.jpg" alt="Cafe Dessert">
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-white bg-black/40">
+      <h2 class="text-5xl font-bold mb-4 drop-shadow-lg">Welcome to Sakura Café</h2>
+      <p class="text-lg mb-6 drop-shadow-md">Bloom with every sip 🌸</p>
+      <a href="#menu" class="bg-pink-600 text-white px-6 py-3 rounded-full hover:bg-pink-700 transition">Explore Menu</a>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+    <!-- Menu Section -->
+  <section id="menu" class="py-16 container mx-auto px-6 reveal">
+    <h2 class="text-3xl font-bold text-center text-pink-700 mb-10">Our Menu</h2>
+
+    <!-- Coffee & Espresso -->
+    <h3 class="text-2xl font-semibold text-pink-600 mb-6">☕ Coffee & Espresso</h3>
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="strawberrylatte.jpg" alt="Strawberry Latte" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Strawberry Latte</h4>
+        <p class="mt-2 text-gray-600">Creamy latte with a sweet strawberry twist.</p>
+        <p class="mt-4 font-semibold">₱120</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="Cappuccino.jpg" alt="Cappuccino" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Cappuccino</h4>
+        <p class="mt-2 text-gray-600">Rich espresso topped with foamy milk.</p>
+        <p class="mt-4 font-semibold">₱110</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="americano.jpg" alt="Americano" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Americano</h4>
+        <p class="mt-2 text-gray-600">Smooth espresso with hot water.</p>
+        <p class="mt-4 font-semibold">₱100</p>
+      </div>
+    </div>
+
+    <!-- Tea & Refreshers -->
+    <h3 class="text-2xl font-semibold text-pink-600 mb-6">🍵 Tea & Refreshers</h3>
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="Rose.jpg" alt="Rose Milk Tea" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Rose Milk Tea</h4>
+        <p class="mt-2 text-gray-600">Fragrant rose petals blended with milk tea.</p>
+        <p class="mt-4 font-semibold">₱95</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="greentea.jpg" alt="Matcha Latte" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Matcha Latte</h4>
+        <p class="mt-2 text-gray-600">Earthy Japanese matcha with milk.</p>
+        <p class="mt-4 font-semibold">₱130</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="icedtea.jpg" alt="Peach Iced Tea" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Peach Iced Tea</h4>
+        <p class="mt-2 text-gray-600">Refreshing iced tea with peach flavor.</p>
+        <p class="mt-4 font-semibold">₱85</p>
+      </div>
+    </div>
+
+    <!-- Cakes & Pastries -->
+    <h3 class="text-2xl font-semibold text-pink-600 mb-6">🍰 Cakes & Pastries</h3>
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="redvelvet.jpg" alt="Red Velvet Cake" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Red Velvet Cake</h4>
+        <p class="mt-2 text-gray-600">Soft, moist cake with cream cheese frosting.</p>
+        <p class="mt-4 font-semibold">₱150</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="macaroons.jpg" alt="Strawberry Macaron" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Strawberry Macaron</h4>
+        <p class="mt-2 text-gray-600">Delicate pink macaron filled with strawberry cream.</p>
+        <p class="mt-4 font-semibold">₱75</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="cheesecake.jpg" alt="Blueberry Cheesecake" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Blueberry Cheesecake</h4>
+        <p class="mt-2 text-gray-600">Classic cheesecake topped with blueberries.</p>
+        <p class="mt-4 font-semibold">₱170</p>
+      </div>
+    </div>
+
+    <!-- Sandwiches & Light Meals -->
+    <h3 class="text-2xl font-semibold text-pink-600 mb-6">🥪 Sandwiches & Light Meals</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="club.jpg" alt="Club Sandwich" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Club Sandwich</h4>
+        <p class="mt-2 text-gray-600">Triple-layer sandwich with ham, egg & veggies.</p>
+        <p class="mt-4 font-semibold">₱160</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="pasta.jpg" alt="Creamy Carbonara" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Creamy Carbonara</h4>
+        <p class="mt-2 text-gray-600">Rich pasta with creamy white sauce.</p>
+        <p class="mt-4 font-semibold">₱180</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition">
+        <img src="salad.jpg" alt="Fresh Garden Salad" class="rounded-xl mb-4">
+        <h4 class="text-xl font-bold text-pink-600">Fresh Garden Salad</h4>
+        <p class="mt-2 text-gray-600">Mixed greens with a light vinaigrette.</p>
+        <p class="mt-4 font-semibold">₱140</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-pink-100 reveal">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-pink-700 mb-6">About Us</h2>
+      <p class="max-w-2xl mx-auto text-gray-700">
+        Sakura Café is a cozy corner where cherry blossoms meet coffee dreams. 
+        Established in 2025, we offer drinks and desserts inspired by the beauty of 
+        springtime in Japan 🌸.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <!-- Contact Section -->
+<section id="contact" class="py-20 bg-gradient-to-r from-pink-50 to-pink-100 reveal">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-pink-700 mb-4">Contact Us</h2>
+    <p class="text-center mb-12 text-gray-600">We’d love to hear from you! 💌</p>
+
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <!-- Contact Info -->
+      <div class="space-y-6">
+        <div class="flex items-center gap-4 bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+          <div class="bg-pink-200 text-pink-700 p-3 rounded-full">
+            📍
+          </div>
+          <div>
+            <h4 class="font-semibold text-pink-700">Visit Us</h4>
+            <p class="text-gray-600">123 Sakura Street, CDO City</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+          <div class="bg-pink-200 text-pink-700 p-3 rounded-full">
+            📞
+          </div>
+          <div>
+            <h4 class="font-semibold text-pink-700">Call Us</h4>
+            <p class="text-gray-600">+63 912 345 6789</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition">
+          <div class="bg-pink-200 text-pink-700 p-3 rounded-full">
+            ✉️
+          </div>
+          <div>
+            <h4 class="font-semibold text-pink-700">Email Us</h4>
+            <p class="text-gray-600">hello@sakuracafe.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="bg-white rounded-2xl shadow-xl p-8">
+        <h3 class="text-2xl font-bold text-pink-700 mb-6 text-center">Send us a Message</h3>
+        <form class="flex flex-col gap-5">
+          <input type="text" placeholder="Your Name" class="border border-pink-200 rounded-lg p-3 focus:ring-2 focus:ring-pink-400 outline-none">
+          <input type="email" placeholder="Your Email" class="border border-pink-200 rounded-lg p-3 focus:ring-2 focus:ring-pink-400 outline-none">
+          <textarea placeholder="Your Message" rows="4" class="border border-pink-200 rounded-lg p-3 focus:ring-2 focus:ring-pink-400 outline-none"></textarea>
+          <button type="submit" class="bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700 transition font-semibold">Send Message 🌸</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-pink-300 py-6 text-center text-pink-900 font-semibold">
+    © 2025 Sakura Café. Bloom with us 🌸
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Carousel
+    const images = document.querySelectorAll(".carousel img");
+    let current = 0;
+    function changeImage() {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }
+    setInterval(changeImage, 3000);
+
+    // Scroll animation
+    // Scroll animation
+const reveals = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.05 }); // smaller threshold = triggers sooner
+
+
+// Run on load also
+window.addEventListener("load", () => {
+  reveals.forEach(section => observer.observe(section));
+});
+
+
+    reveals.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
